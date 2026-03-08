@@ -1,8 +1,8 @@
 const server = Bun.serve({
-  port: 3000,
-  fetch(req) {
-    return new Response("API de Bun activa");
-  },
-});
+  port: process.env.PORT ?? 3000,
+  async fetch(req) {
+    return new Response("API de Bun está funcionando correctamente");
+  }
+})
 
-console.log(`Servidor listo en http://localhost:${server.port}`);
+console.log(`Server is running on ${server.url}:${server.port}`);
