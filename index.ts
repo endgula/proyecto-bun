@@ -1,9 +1,9 @@
 const server = Bun.serve({
-  hostname: "0.0.0.0", // Esto es vital para que Coolify lo detecte
+  hostname: "0.0.0.0", // Cambia 'localhost' por esto para que sea accesible externamente
   port: process.env.PORT ?? 3000,
   async fetch(req) {
-    return new Response("API de Bun activa y funcionando en Coolify");
+    return new Response("API de Bun activa en Coolify");
   },
 });
 
-console.log(`Servidor activo en ${server.hostname}:${server.port}`);
+console.log(`Servidor activo en http://${server.hostname}:${server.port}`);
